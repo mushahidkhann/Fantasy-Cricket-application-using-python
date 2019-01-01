@@ -1,0 +1,147 @@
+<html>
+	<head>
+		<title>
+			Player Vs Player
+		</title>
+	</head>
+	<style>
+		.button {
+			background-color: #1A5BE8;
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+		.button1 {
+		background-color: #1A5BE8;
+		color: white;
+		vertical-align: middle;
+		height: 50px;
+		width: 22.5%;
+		border: none;
+		cursor: pointer;
+		font-size: 15;
+		}
+		.small-image {
+			width: 100%;
+			height: 200px;
+		}
+		.button2 {
+		background-color: #1A5BE8;
+		color: white;
+		cursor: pointer;
+		font-size: 15;
+		width: 100%;
+		}
+		body {
+		background-image: url("/static/background.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+    		background-attachment: fixed;
+		}
+		.table1 {
+		width: 30%;
+		background: rgba(255,255,255,0.65);
+		}
+	</style>
+	<body bgcolor="#D3D3D3" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
+		<div style="background-color:#1A5BE8; width: 100%; height: 50px; border: none;"> 
+		<button class="button1"><a style="text-decoration:none" href="topplayers.html"> Live Matches </a></button>	 
+		<button class="button1"><a style="text-decoration:none" href="topplayers.html"> Current Series </a></button>
+		<button class="button1"><a style="text-decoration:none" href="topplayers.html"> Upcoming Series </a></button>
+		<button class="button1"><a style="text-decoration:none" href="topplayers.html"> Top Players </a></button>
+		</div><center>
+		<br><br><font color="red"> {{ error }}</font><br>
+		<form action="/playervsplayer.html" method="POST">
+			<input type="text" placeholder="Player 1" name="player1" style="width: 200px; font-size: 20">
+			vs 
+			<input type="text" placeholder="Player 2" name="player2" style="width: 200px; font-size: 20">
+			<br> <br><br>
+			<input class="button" name="submit" type="submit" value="Compare" style="width: 200px">
+		</form>
+		</center>
+		<table style="width:50%" align="center" border=1 class="table1">
+			<tr>
+				<th> {{ row[0][1] }} </th>
+  				<th> Name </th>
+				<th> {{ row[1][1] }} </th>
+			</tr>
+			<tr align="center">
+				<td> {{ row[0][3] }} </td>
+				<td> Batting Style </td>
+				<td> {{ row[1][3] }} </td>
+			</tr>
+			<tr align="center">
+				<td> {{ row[0][4] }} </td>
+				<td>  Matches</td>
+				<td> {{ row[1][4] }} </td>
+			</tr>
+			<tr align="center">
+				<td> {{ row[0][5] }} </td>
+				<td> Runs </td>
+				<td> {{ row[1][5] }} </td>
+			</tr>
+			<tr align="center">
+				<td> {{ row[0][6] }} </td>
+				<td> Highest Score </td>
+				<td> {{ row[1][6] }} </td>
+			</tr>
+			<tr align="center">
+				<td> {{ row[0][7] }} </td>
+				<td> Average </td>
+				<td> {{ row[1][7] }} </td>
+			</tr>
+			<tr align="center">
+				<td> {{ row[0][8] }} </td>
+				<td> Strike Rate </td>
+				<td> {{ row[1][8] }} </td>
+			</tr>
+			<tr align="center">
+				<td> {{ row[0][9] }} </td>
+				<td> Hundreds </td>
+				<td> {{ row[1][9] }} </td>
+			</tr>
+			<tr align="center">
+				<td> {{ row[0][10] }} </td>
+				<td> Fifties </td>
+				<td> {{ row[1][10] }} </td>
+			</tr>
+			<tr align="center">
+				<td> {{ row[0][11] }} </td>
+				<td> Fours </td>
+				<td> {{ row[1][11] }} </td>
+			</tr>
+			<tr align="center">
+				<td> {{ row[0][12] }} </td>
+				<td> Sixes </td>
+				<td> {{ row[1][12] }} </td>
+			</tr>
+			<tr align="center">
+				<td> {{ row[0][13] }} </td>
+				<td> Wickets </td>
+				<td> {{ row[1][13] }} </td>
+			<tr align="center">
+				<td> {{ row[0][14] }} </td>
+				<td> Economy </td>
+				<td> {{ row[1][14] }} </td>
+			</tr>
+			<tr align="center">
+				<td> {{ row[0][15] }} </td>
+				<td> Four Wicket Hauls </td>
+				<td> {{ row[1][15] }} </td>
+			</tr>
+			<tr align="center">
+				<td> {{ row[0][16] }} </td>
+				<td> Five Wicket Hauls </td>
+				<td> {{ row[1][16] }} </td>
+			</tr>
+		</table>
+		</center>
+		<center><a href="statistics.html" class="button"> Back </a></center>
+	</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<title>
+			Select Squad
+		</title>
+	<style type="text/css">
+		.button {
+			background-color: #1A5BE8;
+			border: none;
+			color: white;
+			padding: 5px 15px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+		.button1 {
+		background-color: #1A5BE8;
+		color: white;
+		vertical-align: middle;
+		height: 50px;
+		width: 22.5%;
+		border: none;
+		cursor: pointer;
+		font-size: 15;
+		}
+		.div1 {
+			background-color:#1A5BE8;
+			width: 100%; 
+			height: 50px;
+			border: none;
+			position: fixed;
+		}
+		.button2 {
+		background-color: #1A5BE8;
+		color: white;
+		cursor: pointer;
+		font-size: 15;
+		}
+		body {
+		background-image: url("/static/background.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+    		background-attachment: fixed;
+		}
+		.table1 {
+		width: 30%;
+		background: rgba(255,255,255,0.65);
+		}
+	</style>
+	</head>
+	<body bgcolor="#D3D3D3" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">	
+		<div class = "div1">
+		<button class="button1"><a style="text-decoration:none" href="topplayers.html"> Live Matches </a></button>	 
+		<button class="button1"><a style="text-decoration:none" href="topplayers.html"> Current Series </a></button>
+		<button class="button1"><a style="text-decoration:none" href="topplayers.html"> Upcoming Series </a></button>
+		<button class="button1"><a style="text-decoration:none" href="topplayers.html"> Top Players </a></button>
+		</div>
+		<br><br><br><center><a href="home.html" class="button"> Back </a></center><br><br>
+		<div id='parent' style="width: 100%'; overflow: hidden;">
+			<div id = 'leftbox' class="child" style="width: 750px; float: left;">
+				
+		<form action="/squadselect.html" method="POST">
+		<table style="width:100%" align="center" border=1 class="table1">
+			<tr>
+				<th>Select Player</th>
+				<th><input class="button2" name ="send_button2" type="submit" value="Name" style="width:100%"></th>
+				<th><input class="button2" name ="send_button2" type="submit" value="Matches" style="width:100%"></th>
+				<th><input class="button2" name ="send_button2" type="submit" value="Average" style="width:100%"></th>
+				<th><input class="button2" name ="send_button2" type="submit" value="Strike Rate" style="width:100%"></th>
+				<th><input class="button2" name ="send_button2" type="submit" value="Wickets" style="width:100%"></th>
+				<th><input class="button2" name ="send_button2" type="submit" value="Economy" style="width:100%"></th>
+				<th><input class="button2" name ="send_button2" type="submit" value="Price" style="width:100%"></th>
+			</tr>
+			{% for row in rows %}
+			<tr align="center">
+				<td><input class="button2" name ="send_button" type="submit" value="Select {{ row[0] }}" style="width:100%"></td>
+				<td> {{ row[0] }}</td>
+				<td> {{ row[1] }}</td>
+				<td> {{ row[2] }} </td>
+				<td> {{ row[3] }} </td>
+				<td> {{ row[4] }} </td>
+				<td> {{ row[5] }} </td>
+				<td> {{ row[6] }} </td>
+			</tr>
+			{% endfor %}
+		</table>
+		</form>
+
+			</div>
+			<div id = 'rightbox' class="child" style="margin-left: 770px; position: fixed;">
+			<table style="width:100% position: fixed;" align="center">
+				<tr>
+					<th> YOUR BUDGET : </th>
+					<td> {{ budget }}</td>
+				</tr>
+				<tr>
+					<th> YOUR POINTS : </th>
+					<td> {{ p }}</td>
+				</tr>
+			</table>
+				<h2>
+					Selected Players
+				</h2>
+		<br><font color="red">{{error}}</font><br>
+		<form action="/squadselect.html" method="POST">
+		<table style="width:100% position: fixed;" align="center" border=1 class="table1">
+			<tr>
+				<th>Remove Player</th>
+				<th>Name</th>
+				<th>Price</th>
+			</tr>
+			{% for row in rows1 %}
+			<tr align="center">
+				<td><input class="button2" name ="send_button1" type="submit" value="Remove {{ row[0] }}" style="width:100%"></td>
+				<td> {{ row[0] }}</td>
+				<td> {{ row[1] }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+		</form>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,97 @@
+<html>
+	<head>
+		<title>
+			Statistics
+		</title>
+	</head>
+	<style>
+		.button {
+			background-color: #1A5BE8;
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+		.button1 {
+		background-color: #1A5BE8;
+		color: white;
+		vertical-align: middle;
+		height: 50px;
+		width: 22.5%;
+		border: none;
+		cursor: pointer;
+		font-size: 15;
+		}
+		.small-image {
+			width: 100%;
+			height: 200px;
+		}
+		.button2 {
+		background-color: #1A5BE8;
+		color: white;
+		height: 30px;
+		cursor: pointer;
+		font-size: 15;
+		width: 100%;
+		}
+		body {
+		background-image: url("/static/background.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+    		background-attachment: fixed;
+		}
+		.table1 {
+		width: 30%;
+		background: rgba(255,255,255,0.65);
+		}
+	</style>
+	<body bgcolor="#D3D3D3" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
+		<div style="background-color:#1A5BE8; width: 100%; height: 50px; border: none;"> 
+		<button class="button1"><a style="text-decoration:none" href="topplayers.html"> Live Matches </a></button>	 
+		<button class="button1"><a style="text-decoration:none" href="topplayers.html"> Current Series </a></button>
+		<button class="button1"><a style="text-decoration:none" href="topplayers.html"> Upcoming Series </a></button>
+		<button class="button1"><a style="text-decoration:none" href="topplayers.html"> Top Players </a></button>
+		</div>
+		<h1> <center> <font size="50">
+			Statistics
+		</font></center> </h1> 
+
+		<div style="width: 100%; height: 240px; border: none; overflow: hidden;">
+			<div style="width: 49%; float: left;">
+				<img src="/static/playervsplayer.jpeg" class="small-image">
+				<center><form action="playervsplayer.html">
+					<button class="button2"> Player vs Player </button>
+				</form></center>
+			</div>
+		
+			<div style="width: 49%; float: right; right: 100px">
+				<img src="/static/teamvsteam.jpeg" class="small-image">
+				<center><form action="teamvsteam.html">
+					<button class="button2"> Team vs Team </button>
+				</form></center>
+			</div>
+		</div>
+
+		<div style="width: 100%; height: 240px; border: none; overflow: hidden;">
+			<div style="width: 49%; float: left;">
+				<img src="/static/ground.jpeg" class="small-image">
+				<center><form action="playerground.html">
+					<button class="button2"> Player on Particular Ground </button>
+				</form></center>
+			</div>
+		
+			<div style="width: 49%; float: right; right: 100px">
+				<img src="/static/playervsteam.jpeg" class="small-image">
+				<center><form action="playerteam.html">
+					<button class="button2"> Player vs Each Team </button>
+				</form></center>
+			</div>
+		</div>
+		<center><a href="home.html" class="button"> Back </a></center>
+	</body>
+</html>
